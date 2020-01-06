@@ -10,6 +10,7 @@ class Count:
 
     def AskForNumber(self):
         self.number = int(input('What number do you want me to start with?\n'))
+        self.Timer = int(input('How many seconds between each post?\n'))
         time.sleep(5)
         self.CountLoop()
 
@@ -20,7 +21,7 @@ class Count:
                 pyautogui.typewrite('{}'.format(self.number))
                 pyautogui.press('enter')  
                 self.number +=1
-                time.sleep(4)
+                time.sleep(self.Timer)
             except KeyboardInterrupt:
                 input('~~Paused~~\nPlease press enter to continue...\nThe next printed number is {}'.format(self.number))
                 continue
